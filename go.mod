@@ -4,7 +4,6 @@ go 1.12
 
 require (
 	github.com/go-logr/logr v0.1.0
-	github.com/hyorimitsu/sample-controller-kubebuilder v0.0.0-20190903130003-75256305e9ab
 	github.com/onsi/ginkgo v1.8.0
 	github.com/onsi/gomega v1.5.0
 	k8s.io/api v0.0.0-20190409021203-6e4e0e4f393b
