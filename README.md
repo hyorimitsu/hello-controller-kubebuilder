@@ -1,4 +1,5 @@
 # sample-controller-kubebuilder
+Deployment の上位 Resource として Foo を作成
 
 # プロジェクト作成
 $ kubebuilder init --domain k8s.io
