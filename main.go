@@ -51,6 +51,8 @@ func main() {
 	flag.Parse()
 
 	ctrl.SetLogger(zap.Logger(true))
+
+	// 30s 毎に cache を sync
 	var resyncPeriod = time.Second * 30
 
 	mgr, err := ctrl.NewManager(ctrl.GetConfigOrDie(), ctrl.Options{
@@ -64,6 +66,7 @@ func main() {
 		os.Exit(1)
 	}
 
+	// Reconciler を登録
 	if err = (&controllers.FooReconciler{
 		Client:   mgr.GetClient(),
 		Log:      ctrl.Log.WithName("controllers").WithName("Foo"),
