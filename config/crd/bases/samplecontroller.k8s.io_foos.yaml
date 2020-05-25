@@ -15,7 +15,8 @@ spec:
     status: {}
   validation:
     openAPIV3Schema:
-      description: Foo is the Schema for the foos API
+      description: Foo is the Schema for the foos API subresourece:status のマーカーでStatus
+        SubResource（/status を利⽤するためのもの）が有効化された CRDマニフェストファイルが生成される
       properties:
         apiVersion:
           description: 'APIVersion defines the versioned schema of this representation
@@ -30,7 +31,8 @@ spec:
         metadata:
           type: object
         spec:
-          description: FooSpec defines the desired state of Foo
+          description: FooSpec defines the desired state of Foo validation のマーカーでで、フィールドの
+            Validataion を設定。 マニフェストの自動生成ではこれを解析し、⽣成している。 CRD(/config/crd/base/samplecontroller.k8s.io_foo.yaml)参照
           properties:
             deploymentName:
               format: string
@@ -47,6 +49,7 @@ spec:
           description: FooStatus defines the observed state of Foo
           properties:
             availableReplicas:
+              description: オプション項目指定
               format: int32
               type: integer
           type: object
