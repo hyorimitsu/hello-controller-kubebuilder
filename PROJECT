@@ -1,0 +1,3 @@
+version: "2"
+domain: k8s.io
+repo: github.com/hyorimitsu/sample-controller-kubebuilder
