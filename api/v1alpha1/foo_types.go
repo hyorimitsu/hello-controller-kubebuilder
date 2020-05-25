@@ -23,6 +23,9 @@ import (
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
 
 // FooSpec defines the desired state of Foo
+// validation のマーカーでで、フィールドの Validataion を設定。
+// マニフェストの自動生成ではこれを解析し、⽣成している。
+// CRD(/config/crd/base/samplecontroller.k8s.io_foo.yaml)参照
 type FooSpec struct {
 	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:Format:=string
@@ -37,7 +40,7 @@ type FooSpec struct {
 // FooStatus defines the observed state of Foo
 type FooStatus struct {
 	// +optional
-
+	// オプション項目指定
 	AvailableReplicas int32 `json:"availableReplicas"`
 }
 
@@ -45,6 +48,8 @@ type FooStatus struct {
 // +kubebuilder:subresource:status
 
 // Foo is the Schema for the foos API
+// subresourece:status のマーカーでStatus SubResource（/status を利⽤するためのもの）が有効化された
+// CRDマニフェストファイルが生成される
 type Foo struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
