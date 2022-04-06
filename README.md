@@ -1,34 +1,30 @@
-# hello-controller-kubebuilder
-Deployment の上位 Resource として Foo を作成
+hello-controller-kubebuilder
+---
 
-# プロジェクト作成
-$ kubebuilder init --domain k8s.io
+Implement a custom controller for k8s.
 
-# 依存解決
-$ go mod download
+## Description
 
-# テンプレート作成
-$ kubebuilder create api --group samplecontroller --version v1alpha1 --kind Foo
+Using [kubebuilder](https://book.kubebuilder.io/), implement a controller that manages `Foo`, a upper-level resource for `Deployment`.
 
-# API Object を定義
-/api/v1alpha1/foo_types.go を編集
+See the diagram on [this page](https://github.com/kubernetes/sample-controller/blob/master/docs/controller-client-go.md) for a description of how the custom controller works.
 
-# Reconcile を実装
-/controller/foo_controller.go を編集
+## Usage
 
-# main関数 を修正
-main.go を修正
+Generate CRD manifest and apply.
 
-# CRDマニフェスト & apply
-$ make install
+```shell
+make install
+```
 
-# 動作確認
-$ make run
-（別コンソールを開く）
-$ kubectl apply -f config/samples/samplecontroller_v1alpha1_foo.yaml
-$ kubectl get foo
-$ kubectl get deploy
-（元のコンソールを見るとログが出ている）
+If you want to run this on local Go.
 
-# 後片付け
-$ kubectl delete -f config/samples/samplecontroller_v1alpha1_foo.yaml
+```shell
+make run
+```
+
+If you want to run this on Container.
+
+```shell
+make deploy
+```
