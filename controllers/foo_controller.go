@@ -27,7 +27,7 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
-	samplecontrollerv1alpha1 "github.com/hyorimitsu/sample-controller-kubebuilder/api/v1alpha1"
+	samplecontrollerv1alpha1 "github.com/hyorimitsu/hello-controller-kubebuilder/api/v1alpha1"
 )
 
 // FooReconciler reconciles a Foo object

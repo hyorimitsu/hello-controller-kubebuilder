@@ -1,4 +1,4 @@
-# sample-controller-kubebuilder
+# hello-controller-kubebuilder
 Deployment の上位 Resource として Foo を作成
 
 # プロジェクト作成

@@ -1,6 +1,6 @@
 version: "2"
 domain: k8s.io
-repo: github.com/hyorimitsu/sample-controller-kubebuilder
+repo: github.com/hyorimitsu/hello-controller-kubebuilder
 resources:
 - group: samplecontroller
   version: v1alpha1

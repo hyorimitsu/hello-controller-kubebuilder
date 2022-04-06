@@ -1,4 +1,4 @@
-module github.com/hyorimitsu/sample-controller-kubebuilder
+module github.com/hyorimitsu/hello-controller-kubebuilder
 
 go 1.12
 
